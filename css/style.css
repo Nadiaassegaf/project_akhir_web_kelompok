@@ -1,0 +1,348 @@
+:root {
+    --warna-cream: #FAF8F1;
+    --warna-putih: #FFFFFF;
+    --warna-coklat-gelap: #4E4039;
+    --warna-coklat-sedang: #8D6E63;
+    --warna-krem-terang: #EFEBE5;
+    --font-utama: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   2. GLOBAL
+   ===================================================== */
+body {
+    font-family: var(--font-utama);
+    background-color: var(--warna-cream);
+    color: var(--warna-coklat-gelap);
+    line-height: 1.6;
+}
+
+/* HANYA UNTUK LOGIN & REGISTER */
+body.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--warna-coklat-sedang);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   3. HEADER & NAVIGASI
+   ===================================================== */
+.main-header {
+    background-color: var(--warna-putih);
+    padding: 10px 0;
+    border-bottom: 2px solid var(--warna-coklat-sedang);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--warna-coklat-sedang);
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+.main-nav a:hover {
+    background: var(--warna-cream);
+}
+
+.main-nav a.active {
+    background: var(--warna-coklat-gelap);
+    color: var(--warna-putih);
+}
+
+/* =====================================================
+   4. HERO SECTION
+   ===================================================== */
+.hero-section {
+    background: url("../image/kelas.jpg") center/cover no-repeat;
+    height: 700px;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+/* =====================================================
+   SOCIAL ICONS (FIX UKURAN ICON BESAR)
+   ===================================================== */
+.social-icons-bottom {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 2;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,0,0,.5);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.social-item img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* =====================================================
+   5. SPOTLIGHT
+   ===================================================== */
+#spotlight-prestasi {
+    padding: 60px 0;
+    background: var(--warna-krem-terang);
+    text-align: center;
+}
+
+.spotligth-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.student-card {
+    width: 300px;
+    background: var(--warna-putih);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.student-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid var(--warna-coklat-sedang);
+}
+
+.student-card h3 {
+    margin-bottom: 5px;
+}
+
+.student-card .prestasi {
+    font-size: 14px;
+    color: var(--warna-coklat-sedang);
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   6. PROFIL
+   ===================================================== */
+#profil-kelas {
+    padding: 60px 0;
+    background: var(--warna-coklat-sedang);
+}
+
+.profil-content {
+    background: var(--warna-krem-terang);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.profil-image {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 12px;
+}
+
+/* =====================================================
+   7. ANGGOTA
+   ===================================================== */
+.anggota-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+
+@media(max-width:768px){
+    .anggota-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* =====================================================
+   8. LOGIN & REGISTER
+   ===================================================== */
+.auth-box {
+    width: 360px;
+    background: var(--warna-krem-terang);
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--warna-coklat-sedang);
+}
+
+.auth-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--warna-coklat-gelap);
+    color: white;
+    cursor: pointer;
+}
+
+/* =====================================================
+   9. FOOTER
+   ===================================================== */
+footer {
+    background: var(--warna-coklat-gelap);
+    color: var(--warna-cream);
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* ===========================
+     GALERI 
+   =========================== */
+
+.gallery-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 60px 5%;
+}
+
+.gallery-list .block {
+    background: white;
+    border-radius: 14px;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,.12);
+    transition: transform .3s ease;
+}
+
+.gallery-list .block:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-list .block img {
+    width: 100%;
+    height: 180px;       
+    object-fit: cover;  
+    border-radius: 10px;
+}
+
+/* ================= INTRO JUDUL ================= */
+.intro {
+    text-align: center;   
+    margin: 40px 0;       
+}
+
+.intro h1 {
+    font-size: 32px;     
+    color: var(--warna-coklat-gelap);
+    margin-bottom: 10px; 
+}
+
+#garis1 {
+    width: 100px;              
+    height: 3px;               
+    background-color: var(--warna-coklat-gelap);
+    margin: 0 auto;           
+    border-radius: 2px;        
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .gallery-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-list .block img {
+        height: 150px;
+    }
+}

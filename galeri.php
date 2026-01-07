@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="js/script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery IF A</title>
+    <link rel="stylesheet" href="css/image_style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="image/logo.jpg" alt="Logo IF.Algoritma" class="header-logo">
+                <span class="site-title">IF.Algoritma</span>
+            </div> 
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="profil.php">Profil</a></li>
+                    <li><a href="struktur.php">Struktur</a></li>
+                    <li><a href="anggota.php">Anggota</a></li>
+                    <li><a href="galeri.php" class="active" >Galeri</a></li>
+                    <li><a href="logout.php">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+        <!--
+        <div class="content">
+            <h1 id="Tahun">2025</h1>
+            <div class="foto" id="fotos">
+                <img class="main1" src="image/aam.jpg" onclick="slideFunction()">
+                
+            </div>
+        </div>
+         -->
+    <div class="intro">
+        <h1>IF A WEB GALLERY</h1>
+        <br>
+        <div id="garis1"></div>
+    </div>
+    <script src="js/script.js"></script>
+    <div class="gallery-list">
+        <div class="block" id="block1" onclick="show1()">
+            <img src="image/disnatalis/D12.JPG" style="">
+            <br><br>Gallery
+            <br>
+            <h1>DYSNATALIS</h1>
+        </div>
+        <div class="block" id="block2" onclick="show2()">
+            <img src="image/inagurasi/23.png">
+            <br><br>Gallery
+            <br>
+            <h1>INAGURASI</h1>
+        </div>
+        <div class="block" id="block3" onclick="show3()">
+            <img src="image/villa/38.jpg">
+            <br><br>Gallery
+            <br>
+            <h1>VILLA</h1>
+        </div>
+        <div class="block" id="block4" onclick="show4()">
+            <img src="image/kelas/3.jpg" style="">
+            <br><br>Gallery
+            <br>
+            <h1>KELAS</h1>
+        </div>
+    </div>
+    <div  class="photos" id="photos">
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy;2025 IF.Algoritma. Dibuat dengan HTML, CSS, dan JavaScript.</p>
+        </div>
+    </footer>
+    <div id="up1" onclick="scrollUp()"></div>
+</body>
+
+</html>
