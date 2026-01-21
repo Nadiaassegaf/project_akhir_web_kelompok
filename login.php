@@ -42,14 +42,9 @@
             if (LoginUser($conn, $username, md5($password))) {
                 $_SESSION['username'] = $username;
                 $_SESSION['password'] = md5($password);
+                $_SESSION['status'] = LoginUser($conn, $username, md5($password))['status'];
                 header("Location: index.php");
                 exit();
-
-            } else if (LoginAdmin($conn, $username, md5($password))){
-                $_SESSION['username'] = $username;
-                $_SESSION['password'] = md5($password);
-                exit();
-
             } else {
                 echo "akun tidak ditemukan";
             }
@@ -64,14 +59,6 @@
         $row = $result->fetch_assoc();
         return $row;
     }
-
-    function LoginAdmin($conn, $username, $password){
-        $sql = "SELECT * FROM `sessionadmin` WHERE username = '$username' AND `password` = '$password' ";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        return $row;
-    }
-
 
 ?>
 

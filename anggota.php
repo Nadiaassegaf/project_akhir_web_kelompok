@@ -61,14 +61,25 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
         <h4><?= $row['npm'] ?></h4>
         <blockquote>"<?= $row['quotes'] ?>"</blockquote><br>
 
-        <a href="edit.php?id=<?= $row['id'] ?>">Edit</a> |
+        <a href="edit.php?id=<?= $row['id'] ?>">Edit</a>
         <a href="hapus.php?id=<?= $row['id'] ?>"
            onclick="return confirm('Hapus data?')">Hapus</a>
     </div>
 <?php endwhile; ?>
 
     <div class="anggota-tambah">
-        <a href="tambah.php">Tambah Anggota</a>
+        <a href="anggota.php?action=tambah" name="tambah">Tambah Anggota</a>
+        <?php
+                if (isset($_GET['action']) && $_GET['action'] == 'tambah'){
+                    if ($_SESSION['status'] == 'admin'){
+                        header("Location: tambah.php");
+                        exit();
+                    } else {
+                        echo '<script>alert("anda bukan admin, hanya admin yang bisa menambahkan data, bila membutuhkan silahkan hubungi pihak administrasi");</script>';
+                        }
+                    
+                }
+        ?>
     </div>
 
 </div>
