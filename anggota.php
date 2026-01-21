@@ -29,11 +29,19 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="struktur.html">Struktur</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="profil.php">Profil</a></li>
+                <li><a href="struktur.php">Struktur</a></li>
                 <li><a href="anggota.php" class="active">Anggota</a></li>
-                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="galeri.php">Galeri</a></li>
+                <li><a href="index.php?action=logout" name="logout">Logout</a></li>
+                <?php
+                if (isset($_GET['action']) && $_GET['action'] == 'logout'){
+                    header("Location: login.php");
+                    session_destroy();
+                    exit();
+                }
+                ?>
             </ul>
         </nav>
     </div>
@@ -51,7 +59,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
         <img src="image/<?= $row['foto'] ?>">
         <h3><?= $row['nama'] ?></h3>
         <h4><?= $row['npm'] ?></h4>
-        <blockquote>"<?= $row['quotes'] ?>"</blockquote>
+        <blockquote>"<?= $row['quotes'] ?>"</blockquote><br>
 
         <a href="edit.php?id=<?= $row['id'] ?>">Edit</a> |
         <a href="hapus.php?id=<?= $row['id'] ?>"
