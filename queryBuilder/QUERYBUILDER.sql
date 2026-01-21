@@ -10,7 +10,9 @@ CREATE TABLE session (
 INSERT INTO `session` (`id`, `username`, `password`, `status`) 
 VALUES (NULL, 'Simon', MD5('Pizza123'), 'user'),
         (NULL, 'Tolut', MD5('Pizza123'), 'admin'),
-        (NULL, 'Emil', MD5('Pizza123'), 'user');
+        (NULL, 'Emil', MD5('Pizza123'), 'user'),
+        (NULL, 'Kai', MD5('Pizza123'), 'admin'),
+        (NULL, 'Nadia', MD5('Pizza123'), 'admin');
 
 
 /* TABLE ANGGOTA */
@@ -24,17 +26,3 @@ CREATE TABLE anggota (
     quotes TEXT,
     foto VARCHAR(255)
 );
-
-/* CRUD */
-
-INSERT INTO anggota (nama, npm, quotes, foto) VALUES ('nama', 'npm', 'quotes', 'foto');
-
-UPDATE anggota
-SET 
-    nama = 'nama',
-    npm = 'npm',
-    quotes = 'quotes',
-    foto = 'file'
-WHERE id = 1;
-
-DELETE FROM anggota WHERE id = 1;
