@@ -24,7 +24,10 @@ class Anggota extends Database {
     public function delete($id) {
         return $this->conn->query("DELETE FROM anggota WHERE id=$id");
     }
+
+///////////
 }
+
 
     $server = "localhost";
     $user = "root";
@@ -38,3 +41,10 @@ class Anggota extends Database {
     } catch (mysqli_sql_exception) {
       die('<h1 style="color : red;"> WARNING, DB CONNECTION LOST</h1>');
     }
+
+    function register($conn, $usernames, $passwords){
+        $reg = "INSERT INTO `session` (`id`, `username`, `password`) VALUES (NULL, '$usernames', MD5('$passwords'));";
+        $conn->query($reg);
+    }
+
+    

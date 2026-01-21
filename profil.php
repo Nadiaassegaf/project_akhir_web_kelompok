@@ -29,7 +29,7 @@ if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
                 <li><a href="profil.php" class="active">Profil</a></li> 
                 <li><a href="struktur.php">Struktur</a></li>
                 <li><a href="anggota.php">Anggota</a></li>
-                <li><a href="profil.php">Galeri</a></li>
+                <li><a href="galeri.php">Galeri</a></li>
                 <li><a href="index.php?action=logout" name="logout">Logout</a></li>
                 <?php
                 if (isset($_GET['action']) && $_GET['action'] == 'logout'){
