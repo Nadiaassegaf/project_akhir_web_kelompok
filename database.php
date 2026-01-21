@@ -43,7 +43,7 @@ class Anggota extends Database {
     }
 
     function register($conn, $usernames, $passwords){
-        $reg = "INSERT INTO `session` (`id`, `username`, `password`) VALUES (NULL, '$usernames', MD5('$passwords'));";
+        $reg = "INSERT INTO `session` (`id`, `username`, `password`, `status`) VALUES (NULL, '$usernames', MD5('$passwords'), 'user');";
         $conn->query($reg);
     }
 
